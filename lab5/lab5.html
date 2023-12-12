@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Лаба5</title>
+</head>
+<body>
+
+<script>
+class Animal{
+food;
+location;
+
+constructor(food, location){
+this.food = food;
+this.location = location;
+}
+
+makeNoise(){
+return 'шумит';
+}
+
+eat(){
+return 'ест';
+}
+
+sleep(){
+return 'спит';
+}}
+
+class Dog extends Animal{
+poroda;
+
+constructor(food, location, poroda){
+super(food, location);
+this.poroda = poroda;
+}
+
+makeNoise(){
+return 'собака' + ' ' + super.makeNoise();
+}
+
+eat(){
+return 'собака' + ' ' + super.eat() + ' ' + this.food;
+}
+
+sleep(){
+return 'собака' + ' ' + super.sleep();
+}}
+
+class Cat extends Animal{
+color;
+
+constructor(food, location, color){
+super(food, location);
+this.color = color;
+}
+
+makeNoise(){
+return 'кот' + ' ' + super.makeNoise();
+}
+
+eat(){
+return 'кот' + ' ' + super.eat() + ' ' + this.food;
+}
+
+sleep(){
+return 'кот' + ' ' + super.sleep();
+}}
+
+class Horse extends Animal{
+harakter;
+
+constructor(food, location, harakter){
+super(food, location);
+this.harakter = harakter;
+}
+
+makeNoise(){
+return 'лошадь' + ' ' + super.makeNoise();
+}
+
+eat(){
+return 'лошадь' + ' ' + super.eat() + ' ' + this.food;
+}
+
+sleep(){
+return 'лошадь' + ' ' + super.sleep();
+}}
+
+class Vet{
+treatAnimal(obj){
+return obj.eat() + ' ' + `место обитания - ${obj.location}.` + '<br>';
+}}
+
+let veterinar = new Vet();
+
+let kit = new Cat('феликс','квартира','серая');
+document.write(veterinar.treatAnimal(kit) + '<br>');
+
+let loshad = new Horse('зелень','загон','добрая');
+document.write(veterinar.treatAnimal(loshad) + '<br>');
+
+let tihon = new Dog('корм','дом','шпиц');
+document.write(veterinar.treatAnimal(tihon));
+
+</script>
+</body>
+</html>
